@@ -87,6 +87,10 @@ export default defineNuxtConfig({
 			gzip: true,
 			brotli: true,
 		},
+		plugins: ['~/server/index.js'],
+	},
+	runtimeConfig: {
+		mongodbUri: process.env.MONGODB_URI,
 	},
 
 	postcss: {
