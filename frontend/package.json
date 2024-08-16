@@ -1,0 +1,43 @@
+{
+	"name": "limbo-nuxt3-boilerplate",
+	"version": "0.0.0",
+	"boilerplate-version": "2.0.1",
+	"description": "Limbo Nuxt3 Boilerplate",
+	"author": "Limbo",
+	"private": true,
+	"project": {
+		"id": "0000xx",
+		"name": "customerName"
+	},
+	"scripts": {
+		"build": "unocss -m && nuxt build",
+		"generate": "unocss -m && nuxt generate",
+		"dev": "unocss -w & nuxt dev",
+		"start": "nuxt start",
+		"prettier": "prettier \"**/*.{js,vue,md,yml,css,scss,json}\"",
+		"eslint": "eslint \"**/*.{js,vue}\"",
+		"lint": "yarn prettier --check . && yarn eslint --quiet .",
+		"lint:fix": "yarn prettier --write . && yarn eslint --fix --quiet ."
+	},
+	"dependencies": {
+		"@limbo-works/image": "^1.0.1",
+		"@limbo-works/lint-configs": "^1.0.3",
+		"@limbo-works/theme-configuration": "^2.2.0",
+		"@nuxtjs/fontaine": "^0.4.3",
+		"@pinia/nuxt": "^0.5.3",
+		"@unocss/cli": "^0.58.5",
+		"@unocss/nuxt": "^0.58.5",
+		"@unocss/preset-rem-to-px": "^0.62.2",
+		"@unocss/preset-wind": "^0.62.2",
+		"@vitejs/plugin-vue": "^5.1.2",
+		"clone-deep": "^4.0.1",
+		"deepmerge": "^4.3.1",
+		"dotenv": "^16.4.5",
+		"h3": "^1.12.0",
+		"nuxt": "^3.10.3",
+		"pinia": "^2.2.2",
+		"postcss-nesting": "^13.0.0",
+		"unocss": "^0.58.5",
+		"vite-svg-loader": "^5.1.0"
+	}
+}
