@@ -12,7 +12,7 @@
 	"scripts": {
 		"build": "unocss -m && nuxt build",
 		"generate": "unocss -m && nuxt generate",
-		"dev": "unocss -w & nuxt dev",
+		"dev": "nuxt dev",
 		"start": "nuxt start",
 		"prettier": "prettier \"**/*.{js,vue,md,yml,css,scss,json}\"",
 		"eslint": "eslint \"**/*.{js,vue}\"",

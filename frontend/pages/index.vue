@@ -1,7 +1,7 @@
 <template>
 	<div class="p-index">
-		<PageHeader title="Who are you?"></PageHeader>
-		<pre>{{ items }}</pre>
+		<PageHeader title="Who are you?" step="01" />
+		<PersonSelector :persons="items" />
 	</div>
 </template>
 <script setup>
@@ -11,10 +11,15 @@ const items = ref([]);
 async function getUsers() {
 	const { users } = useMainStore();
 	items.value = users;
+	console.log(items.value);
 }
 
 onMounted(() => {
 	getUsers();
 });
 </script>
-<style lang="postcss"></style>
+<style lang="postcss">
+.p-index {
+	@apply px-24px;
+}
+</style>

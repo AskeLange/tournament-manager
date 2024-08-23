@@ -18,11 +18,7 @@ export default defineNuxtConfig({
 		),
 	],
 
-	modules: [
-		'@pinia/nuxt',
-		'@nuxtjs/fontaine',
-		['@unocss/nuxt', { autoImport: false }],
-	],
+	modules: ['@pinia/nuxt', '@nuxtjs/fontaine', '@unocss/nuxt'],
 	buildModules: [],
 	plugins: [],
 
