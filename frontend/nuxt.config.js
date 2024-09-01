@@ -18,11 +18,7 @@ export default defineNuxtConfig({
 		),
 	],
 
-	modules: [
-		'@pinia/nuxt',
-		'@nuxtjs/fontaine',
-		['@unocss/nuxt', { autoImport: false }],
-	],
+	modules: ['@pinia/nuxt', '@nuxtjs/fontaine', '@unocss/nuxt'],
 	buildModules: [],
 	plugins: [],
 
@@ -87,6 +83,10 @@ export default defineNuxtConfig({
 			gzip: true,
 			brotli: true,
 		},
+		plugins: ['~/server/index.js'],
+	},
+	runtimeConfig: {
+		mongodbUri: process.env.MONGODB_URI,
 	},
 
 	postcss: {
