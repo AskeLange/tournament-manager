@@ -1,10 +1,11 @@
 import { User } from '~~/server/models/user.model';
 import { defineEventHandler } from 'h3';
 
-
 export default defineEventHandler(async (event) => {
 	const { user, points } = await readBody(event);
-	const updatedPoints = user.user.points + points;
+	const updatedPoints = points;
+
+	console.log(user.user._id, updatedPoints);
 
 	try {
 		await User.updateOne(
@@ -21,5 +22,4 @@ export default defineEventHandler(async (event) => {
 			body: { message: err.message },
 		};
 	}
-
 });

@@ -5,7 +5,13 @@
 body {
 	font-family: "Suisse Int'l", sans-serif;
 	font-weight: 500;
-	color: #191919;
+
+	--primary: #fafafa;
+	--surface: #191919;
+	--canvas: #fafafa;
+
+	color: var(--surface);
+	background: var(--primary);
 }
 
 /* Default values, will be overwritten by JS */

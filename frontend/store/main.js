@@ -2,13 +2,13 @@ import { defineStore } from 'pinia';
 
 export const useMainStore = defineStore('main', {
 	state: () => ({
-		site: null,
+		user: { _id: '66bf0a1de9d9e3c0a5b7a1c4' },
 		users: [],
 	}),
 
 	actions: {
-		setSiteData(data) {
-			this.site = data;
+		setUser(user) {
+			this.user = user;
 		},
 		setUsersData(users) {
 			this.users = users;

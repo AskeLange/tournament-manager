@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <style lang="postcss">
-.c-page-header {
+:where(.c-page-header) {
 	@apply py-42;
 }
 </style>
