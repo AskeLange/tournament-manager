@@ -3,7 +3,7 @@
 		<img
 			:src="img"
 			alt="A person"
-			class="w-full h-full object-cover aspect-square"
+			class="w-full h-full object-cover aspect-square grayscale"
 		/>
 	</div>
 </template>

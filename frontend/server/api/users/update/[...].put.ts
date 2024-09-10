@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
 		);
 		return {
 			status: 201,
-			body: { message: 'User created' },
+			body: { message: 'User updated' },
 		};
 	} catch (err) {
 		return {

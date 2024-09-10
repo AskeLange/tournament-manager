@@ -1,7 +1,14 @@
 <template>
 	<div class="p-index">
-		<PageHeader title="Who are you?" step="01" />
-		<PersonSelector :persons="items" />
+		<SiteHeader />
+		<div class="py-42 px-24px">
+			<div class="flex gap-8">
+				<span class="text-#191919 !text-opacity-40 text-16">01</span>
+
+				<span class="text-16">Who are you?</span>
+			</div>
+		</div>
+		<PersonSelector :persons="items" class="px-24px" />
 	</div>
 </template>
 <script setup>
@@ -18,8 +25,4 @@ onMounted(() => {
 	getUsers();
 });
 </script>
-<style lang="postcss">
-.p-index {
-	@apply px-24px;
-}
-</style>
+<style lang="postcss"></style>

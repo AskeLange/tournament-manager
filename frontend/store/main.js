@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useMainStore = defineStore('main', {
 	state: () => ({
-		user: { _id: '66bf0a1de9d9e3c0a5b7a1c4' },
+		user: {},
 		users: [],
 	}),
 
@@ -10,7 +10,7 @@ export const useMainStore = defineStore('main', {
 		setUser(user) {
 			this.user = user;
 		},
-		setUsersData(users) {
+		setUsers(users) {
 			this.users = users;
 		},
 	},

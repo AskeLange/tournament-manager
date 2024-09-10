@@ -1,6 +1,8 @@
 <template>
 	<div class="p-courses">
-		<div class="px-24 pt-48 pb-32 flex flex-col gap-4 leading-115%">
+		<SiteHeader />
+
+		<div class="px-24 pb-32 flex flex-col gap-4 leading-115%">
 			<span class="text-16 -tracking-.2" v-text="user.name"></span>
 
 			<span
