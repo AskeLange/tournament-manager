@@ -1,11 +1,11 @@
+@import './preflight.css';
 @import './transitions/basic.css';
+@import '../fonts/index.css';
 
-/* Temporary font probably */
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-* {
-	font-family: 'Questrial', sans-serif;
-	padding: 0;
-	margin: 0;
+body {
+	font-family: "Suisse Int'l", sans-serif;
+	font-weight: 500;
+	color: #191919;
 }
 
 /* Default values, will be overwritten by JS */

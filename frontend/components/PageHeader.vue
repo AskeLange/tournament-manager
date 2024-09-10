@@ -1,11 +1,11 @@
 <template>
 	<div class="c-page-header">
 		<div class="flex gap-8">
-			<span
-				class="text-#191919 !text-opacity-40 font-600 -tracking-0.32 text-20"
-				>{{ step }}</span
-			>
-			<span class="font-600 -tracking-0.32 text-20">{{ title }}</span>
+			<span class="text-#191919 !text-opacity-40 -tracking-0.32 text-20">
+				{{ step }}
+			</span>
+
+			<span class="-tracking text-20 -tracking-.2">{{ title }}</span>
 		</div>
 	</div>
 </template>
@@ -15,6 +15,7 @@ defineProps({
 	step: String,
 });
 </script>
+
 <style lang="postcss">
 .c-page-header {
 	@apply py-42;

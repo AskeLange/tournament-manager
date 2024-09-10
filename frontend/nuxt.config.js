@@ -11,12 +11,7 @@ export default defineNuxtConfig({
 	extends: ['@limbo-works/theme-configuration', '@limbo-works/image'],
 
 	/* The fileURLToPath is necessary if the solution is to be extendable and keep that css */
-	css: [
-		fileURLToPath(new URL('./assets/css/index.css', import.meta.url)),
-		fileURLToPath(
-			new URL('./assets/generated/css/unocss.css', import.meta.url)
-		),
-	],
+	css: [fileURLToPath(new URL('./assets/css/index.css', import.meta.url))],
 
 	modules: ['@pinia/nuxt', '@nuxtjs/fontaine', '@unocss/nuxt'],
 	buildModules: [],
