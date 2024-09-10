@@ -6,6 +6,7 @@
 			id="main"
 			class="min-h-screen text-strong mx-auto max-w-500px bg-#f5f5f5"
 		>
+			<SiteHeader />
 			<NuxtPage />
 		</main>
 	</div>
@@ -19,5 +20,6 @@ setUsers(users);
 <style lang="postcss">
 :where(#app) {
 	@apply text-strong;
+	--easing-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 </style>

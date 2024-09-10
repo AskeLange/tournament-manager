@@ -1,7 +1,5 @@
 <template>
 	<div class="p-leaderboard">
-		<SiteHeader />
-
 		<div class="px-24 pb-32 flex flex-col gap-24">
 			<div
 				v-for="(user, index) in usersComputed"

@@ -20,7 +20,7 @@
 			</NuxtLink>
 			<div
 				class="p-12 border-l border-#e1e1e1 cursor-pointer"
-				@click="isOpen = !isOpen"
+				@click="doMenu"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -66,18 +66,39 @@
 					>
 				</li>
 				<li class="border-b border-#e1e1e1 bg-#f5f5f5 flex justify-end">
-					<NuxtLink
+					<button
 						to="/logout"
 						class="uppercase tracking-0.8px text-10 py-14 px-16 w-full text-right"
-						>log out</NuxtLink
+						@click="logoutUser"
 					>
+						log out
+					</button>
 				</li>
 			</ul>
 		</Transition>
 	</div>
 </template>
 <script setup>
+const route = useRoute();
+console.log(route);
 const isOpen = ref(false);
+
+watch(
+	() => route.path,
+	() => {
+		isOpen.value = false;
+	}
+);
+
+function doMenu() {
+	isOpen.value = !isOpen.value;
+}
+
+async function logoutUser() {
+	const cookie = useCookie('user_id');
+	cookie.value = null;
+	await navigateTo('/');
+}
 </script>
 <style lang="postcss">
 .c-site-header {

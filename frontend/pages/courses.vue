@@ -1,7 +1,5 @@
 <template>
 	<div class="p-courses">
-		<SiteHeader />
-
 		<div class="px-24 pb-32 flex flex-col gap-4 leading-115%">
 			<span class="text-16 -tracking-.2" v-text="user.name"></span>
 
@@ -47,8 +45,6 @@ const courses = [
 
 const id = useMainStore().user._id;
 const { user } = await getUser(id);
-
-console.log(id, user);
 
 let timeout;
 const values = ref(

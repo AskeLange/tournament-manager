@@ -1,8 +1,11 @@
 <template>
 	<div class="c-person-selector">
-		<template v-for="person in persons">
-			<PersonCard v-bind="{ img: person.image }" @click="set(person)" />
-		</template>
+		<PersonCard
+			v-for="(person, index) in persons"
+			v-bind="{ img: person.image }"
+			:style="`--card-delay:${index}`"
+			@click="set(person)"
+		/>
 	</div>
 </template>
 
@@ -18,7 +21,6 @@ if (cookie.value) {
 	await navigateTo('/courses');
 }
 
-// Set user in cookie and ... store?
 function set(user) {
 	cookie.value = user._id;
 	setUser(user);
