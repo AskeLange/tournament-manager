@@ -2,9 +2,11 @@
 	<div class="p-courses">
 		<div
 			v-if="user"
-			class="px-24 pt-48 flex flex-col gap-4 leading-115% text-center"
+			class="px-24 pt-48 flex flex-col items-center gap-8 leading-115% text-center"
 		>
-			<span class="text-16 -tracking-.2" v-text="user.name"></span>
+			<SvgCrown class="w-64 text-#111 mb-12 -rotate-6" />
+
+			<span class="text-20 -tracking-1" v-text="user.name"></span>
 
 			<span
 				class="opacity-40 text-12 tracking-1 uppercase"
@@ -12,7 +14,7 @@
 			></span>
 		</div>
 
-		<div class="px-24 py-64 flex flex-col gap-16">
+		<div class="py-64 flex flex-col gap-20">
 			<CourseItem
 				v-for="(title, index) in courses"
 				:key="index"
@@ -25,6 +27,7 @@
 </template>
 
 <script setup>
+import SvgCrown from '~/assets/svgs/icon-crown.svg';
 import { useMainStore } from '~/store/main.js';
 
 const courses = [
@@ -48,6 +51,7 @@ const courses = [
 
 const cookie = useCookie('user_id');
 const store = useMainStore();
+
 const id = store.user._id;
 let user = store.users.find(({ _id }) => _id === id);
 

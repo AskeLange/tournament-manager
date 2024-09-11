@@ -1,7 +1,7 @@
 <template>
 	<div class="c-course-item">
 		<!-- <span
-			class="text-16 text-left -tracking-.3 pt-48 pb-12"
+			class="opacity-80 text-center text-12 tracking-2 uppercase"
 			v-text="title"
 		></span> -->
 
@@ -20,6 +20,6 @@ const model = defineModel({ type: Number });
 
 <style lang="postcss">
 :where(.c-course-item) {
-	@apply flex flex-col gap-8;
+	@apply flex flex-col gap-24 px-24;
 }
 </style>

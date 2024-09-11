@@ -14,9 +14,17 @@
 
 <script setup>
 import { useMainStore } from '~/store/main.js';
-const { setUsers } = useMainStore();
-const { users } = await getAllUsers();
-setUsers(users);
+
+const store = useMainStore();
+const cookie = useCookie('user_id');
+const users = (await getAllUsers()).users;
+console.log(users);
+
+store.setUsers(users);
+
+if (cookie.value) {
+	store.setUser(store.users.find(({ _id }) => _id === cookie.value));
+}
 </script>
 
 <style lang="postcss">

@@ -3,10 +3,6 @@
 		<Transition name="person-selector-appear" appear>
 			<div class="py-42 px-24px">
 				<div class="flex gap-8">
-					<span class="text-#191919 !text-opacity-40 text-16"
-						>01</span
-					>
-
 					<span class="text-16">Who are you?</span>
 				</div>
 			</div>
@@ -16,16 +12,15 @@
 </template>
 <script setup>
 import { useMainStore } from '~/store/main.js';
-const items = ref([]);
 
-async function getUsers() {
-	const { users } = useMainStore();
-	items.value = users;
+const store = useMainStore();
+const cookie = useCookie('user_id');
+const items = ref(store.users);
+
+if (cookie.value) {
+	store.setUser(store.users.find(({ _id }) => _id === cookie.value));
+	await navigateTo('/courses');
 }
-
-onMounted(() => {
-	getUsers();
-});
 </script>
 <style lang="postcss">
 .person-selector-appear-enter-active,

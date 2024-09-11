@@ -1,14 +1,17 @@
 <template>
 	<div class="p-leaderboard">
-		<div class="px-24 pb-32 flex flex-col gap-24">
+		<div class="px-24 pb-32 flex flex-col gap-20">
 			<div
 				v-for="(user, index) in usersComputed"
 				:key="index"
-				class="flex flex-col gap-2"
+				class="flex items-center gap-12"
 			>
+				<div
+					v-text="`${index + 1}`"
+					class="text-16 w-40 h-40 flex justify-center items-center rounded-full bg-[var(--surface)] text-[var(--primary)]"
+				></div>
+
 				<span v-text="user.name"></span>
-				<span v-text="user.title"></span>
-				<span v-text="user.totalPoints"></span>
 			</div>
 		</div>
 	</div>
@@ -24,15 +27,17 @@ async function update() {
 }
 
 const usersComputed = computed(() => {
-	return users.value.map((user) => {
-		let totalPoints = (
-			Array.isArray(user.points) ? user.points : [0]
-		).reduce((acc, points) => acc + points, 0);
+	return users.value
+		.map((user) => {
+			let totalPoints = (
+				Array.isArray(user.points) ? user.points : [0]
+			).reduce((acc, points) => acc + (points || 20), 0);
 
-		return {
-			...user,
-			totalPoints,
-		};
-	});
+			return {
+				...user,
+				totalPoints,
+			};
+		})
+		.sort((a, b) => a.totalPoints - b.totalPoints);
 });
 </script>
