@@ -1,15 +1,34 @@
 <template>
 	<div class="c-person-selector">
-		<template v-for="person in persons">
-			<PersonCard v-bind="{ img: person.image }" />
-		</template>
+		<PersonCard
+			v-for="(person, index) in persons"
+			v-bind="{ img: person.image }"
+			:style="`--card-delay:${index}`"
+			@click="set(person)"
+		/>
 	</div>
 </template>
 
 <script setup>
+import { useMainStore } from '~/store/main.js';
 defineProps({
 	persons: Array,
 });
+
+const store = useMainStore();
+const cookie = useCookie('user_id');
+
+if (cookie.value) {
+	const user = await getUser(cookie.value);
+	store.setUser(user);
+
+	await navigateTo('/courses');
+}
+
+function set(user) {
+	cookie.value = user._id;
+	setUser(user);
+}
 </script>
 <style lang="postcss">
 .c-person-selector {
