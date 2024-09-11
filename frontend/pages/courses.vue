@@ -1,6 +1,9 @@
 <template>
 	<div class="p-courses">
-		<div class="px-24 pt-48 flex flex-col gap-4 leading-115% text-center">
+		<div
+			v-if="user"
+			class="px-24 pt-48 flex flex-col gap-4 leading-115% text-center"
+		>
 			<span class="text-16 -tracking-.2" v-text="user.name"></span>
 
 			<span
@@ -43,9 +46,15 @@ const courses = [
 	'Lorem Ipsum',
 ];
 
+const cookie = useCookie('user_id');
 const store = useMainStore();
 const id = store.user._id;
-const user = store.users.find(({ _id }) => _id === id);
+let user = store.users.find(({ _id }) => _id === id);
+
+if (!user) {
+	const x = await getUser(cookie.value);
+	store.setUser(x.user);
+}
 
 let timeout;
 const values = ref(

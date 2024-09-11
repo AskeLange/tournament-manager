@@ -10,14 +10,18 @@
 </template>
 
 <script setup>
+import { useMainStore } from '~/store/main.js';
 defineProps({
 	persons: Array,
 });
+
+const store = useMainStore();
 const cookie = useCookie('user_id');
-import { useMainStore } from '~/store/main.js';
-const { setUser } = useMainStore;
 
 if (cookie.value) {
+	const user = await getUser(cookie.value);
+	store.setUser(user);
+
 	await navigateTo('/courses');
 }
 

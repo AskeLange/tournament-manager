@@ -80,7 +80,6 @@
 </template>
 <script setup>
 const route = useRoute();
-console.log(route);
 const isOpen = ref(false);
 
 watch(
