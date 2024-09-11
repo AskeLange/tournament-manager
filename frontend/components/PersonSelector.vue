@@ -21,13 +21,13 @@ const cookie = useCookie('user_id');
 if (cookie.value) {
 	const user = await getUser(cookie.value);
 	store.setUser(user);
-
 	await navigateTo('/courses');
 }
 
-function set(user) {
+async function set(user) {
 	cookie.value = user._id;
 	setUser(user);
+	await navigateTo('/courses');
 }
 </script>
 <style lang="postcss">

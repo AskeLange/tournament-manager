@@ -3,7 +3,6 @@ import { defineEventHandler } from 'h3';
 
 export default defineEventHandler(async (event) => {
 	const user = await readBody(event);
-	console.log(user)
 	try {
 		await User.create(user);
 		return {
@@ -16,5 +15,4 @@ export default defineEventHandler(async (event) => {
 			body: { message: err.message },
 		};
 	}
-
 });

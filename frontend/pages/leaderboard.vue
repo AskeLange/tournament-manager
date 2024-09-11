@@ -24,8 +24,6 @@ async function update() {
 }
 
 const usersComputed = computed(() => {
-	console.log(users.value);
-
 	return users.value.map((user) => {
 		let totalPoints = (
 			Array.isArray(user.points) ? user.points : [0]

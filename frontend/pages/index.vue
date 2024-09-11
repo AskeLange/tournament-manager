@@ -21,7 +21,6 @@ const items = ref([]);
 async function getUsers() {
 	const { users } = useMainStore();
 	items.value = users;
-	console.log(items.value);
 }
 
 onMounted(() => {
