@@ -11,12 +11,14 @@
 		</main>
 	</div>
 </template>
+
 <script setup>
 import { useMainStore } from '~/store/main.js';
 const { setUsers } = useMainStore();
 const { users } = await getAllUsers();
 setUsers(users);
 </script>
+
 <style lang="postcss">
 :where(#app) {
 	@apply text-strong;
