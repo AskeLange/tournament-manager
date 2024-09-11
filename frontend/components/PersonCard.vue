@@ -1,6 +1,6 @@
 <template>
-	<Transition name="person-appear" appear>
-		<figure class="c-person-card">
+	<Transition name="person-appear">
+		<figure v-if="isMounted" class="c-person-card">
 			<img
 				:src="img"
 				alt="A person"
@@ -13,6 +13,12 @@
 defineProps({
 	img: String,
 	name: String,
+});
+
+const isMounted = ref(false);
+
+onMounted(() => {
+	isMounted.value = true;
 });
 </script>
 <style lang="postcss">
