@@ -135,7 +135,8 @@ async function logoutUser() {
 .menu-up-enter-active,
 .menu-up-leave-active {
 	&,
-	& li {
+	& li,
+	& li > * {
 		transition: 0.4s cubic-bezier(0.7, 0, 0.3, 1);
 	}
 }
@@ -144,11 +145,20 @@ async function logoutUser() {
 .menu-up-leave-to {
 	@apply -translate-y-full;
 
+	& li:nth-child(1) > * {
+		@apply opacity-80;
+	}
 	& li:nth-child(2) {
 		@apply -translate-y-50%;
+		& > * {
+			@apply opacity-50;
+		}
 	}
 	& li:nth-child(3) {
 		@apply -translate-y-100%;
+		& > * {
+			@apply opacity-20;
+		}
 	}
 }
 </style>
