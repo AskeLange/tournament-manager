@@ -123,7 +123,7 @@ async function logoutUser() {
 	&:before {
 		@apply fixed top-0 left-0 bottom-0 right-0 z-9;
 		@apply bg-#191919 opacity-0 pointer-events-none;
-		transition: 0.4s cubic-bezier(0.9, 0, 0.1, 1);
+		transition: 0.4s cubic-bezier(0.7, 0, 0.3, 1);
 		content: '';
 	}
 }

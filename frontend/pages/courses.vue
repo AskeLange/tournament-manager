@@ -35,21 +35,21 @@ import { useMainStore } from '~/store/main.js';
 
 const courses = [
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
 	'Lorem',
-	'Lorem Ipsum',
+	'Lorem',
+	'Lorem',
+	'Lorem',
+	'Lorem',
+	'Lorem',
+	'Lorem',
+	'Lorem',
+	'Lorem',
 ];
 
 const cookie = useCookie('user_id');
