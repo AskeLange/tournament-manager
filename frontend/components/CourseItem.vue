@@ -29,6 +29,7 @@ onMounted(() => {
 <style lang="postcss">
 :where(.c-course-item) {
 	@apply flex flex-col gap-24 px-24;
+	touch-action: manipulation;
 }
 
 .course-appear-enter-active,
@@ -41,6 +42,6 @@ onMounted(() => {
 
 .course-appear-enter-from,
 .course-appear-leave-to {
-	@apply opacity-0 -translate-y-12;
+	@apply opacity-0 translate-y-20;
 }
 </style>

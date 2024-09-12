@@ -41,7 +41,7 @@ onMounted(() => {
 });
 </script>
 <style lang="postcss">
-.person-selector-appear-enter-active,
+/* .person-selector-appear-enter-active,
 .person-selector-appear-leave-active {
 	transition: all 0.5s ease-in-out;
 }
@@ -49,5 +49,5 @@ onMounted(() => {
 .person-selector-appear-enter-from,
 .person-selector-appear-leave-to {
 	@apply opacity-0 translate-y-12;
-}
+} */
 </style>

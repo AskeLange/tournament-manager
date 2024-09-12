@@ -95,6 +95,6 @@ onMounted(() => {
 
 .person-selector-appear-enter-from,
 .person-selector-appear-leave-to {
-	@apply opacity-0 translate-y-12;
+	@apply opacity-0;
 }
 </style>

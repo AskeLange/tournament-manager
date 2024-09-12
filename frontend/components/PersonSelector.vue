@@ -26,6 +26,6 @@ async function set(user) {
 </script>
 <style lang="postcss">
 .c-person-selector {
-	@apply grid grid-cols-2 gap-8 overflow-hidden;
+	@apply grid grid-cols-2 gap-8;
 }
 </style>
