@@ -27,9 +27,7 @@ function callback(e) {
 }
 
 onMounted(() => {
-	observer.value = new IntersectionObserver(callback, {
-		rootMargin: '-50px',
-	});
+	observer.value = new IntersectionObserver(callback);
 	observer.value.observe(card.value);
 });
 onBeforeUnmount(() => {
