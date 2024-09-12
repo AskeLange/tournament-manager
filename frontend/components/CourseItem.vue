@@ -2,9 +2,9 @@
 	<Transition name="course-appear">
 		<div v-if="isMounted" class="c-course-item">
 			<!-- <span
-			class="opacity-80 text-center text-12 tracking-2 uppercase"
-			v-text="title"
-		></span> -->
+				class="opacity-80 text-center text-12 tracking-2 uppercase"
+				v-text="title"
+			></span> -->
 
 			<BaseInputNumber v-model="model" />
 		</div>
@@ -18,7 +18,6 @@ defineProps({
 });
 
 const model = defineModel({ type: Number });
-
 const isMounted = ref(false);
 
 onMounted(() => {
