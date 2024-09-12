@@ -46,13 +46,25 @@ const courses = [
 const cookie = useCookie('user_id');
 const store = useMainStore();
 
+const users = (await getAllUsers()).users;
+store.setUsers(users);
+
+if (cookie.value) {
+	store.setUser(store.users.find(({ _id }) => _id === cookie.value));
+}
+
 const isMounted = ref(false);
 const id = store.user._id;
 let user = store.users.find(({ _id }) => _id === id);
 
-if (!user) {
+if (!user && cookie.value) {
 	const x = await getUser(cookie.value);
 	store.setUser(x.user);
+	user = x.user;
+}
+
+if (!user) {
+	await navigateTo('/');
 }
 
 let timeout;
@@ -75,6 +87,10 @@ watch(
 
 onMounted(() => {
 	isMounted.value = true;
+});
+
+onBeforeRouteLeave(() => {
+	updateUser(id, values.value);
 });
 </script>
 

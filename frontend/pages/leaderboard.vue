@@ -76,13 +76,14 @@ const usersComputed = computed(() => {
 	return users.value
 		.map((user) => {
 			let points = 0;
+
 			for (let n = 0; n < 7; n++) {
-				points += user.points?.[n] || 0;
+				points += user.points?.[n] || 20;
 			}
 
 			return {
 				...user,
-				points,
+				totalPoints: points,
 			};
 		})
 		.sort((a, b) => a.totalPoints - b.totalPoints);
