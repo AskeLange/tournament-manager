@@ -1,6 +1,11 @@
 <template>
 	<Transition name="course-appear">
 		<div v-if="isMounted" class="c-course-item">
+			<span
+				class="text-16 text-center w-full block mt-20 -tracking-.3"
+				v-text="`${step}. ${title}`"
+			></span>
+
 			<!-- <span
 				class="opacity-80 text-center text-12 tracking-2 uppercase"
 				v-text="title"
@@ -27,7 +32,7 @@ onMounted(() => {
 
 <style lang="postcss">
 :where(.c-course-item) {
-	@apply flex flex-col gap-24 px-24;
+	@apply flex flex-col gap-20 px-24;
 	touch-action: manipulation;
 }
 

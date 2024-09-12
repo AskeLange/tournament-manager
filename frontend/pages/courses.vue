@@ -16,13 +16,8 @@
 			</div>
 		</Transition>
 
-		<div class="py-64 flex flex-col gap-20">
+		<div class="pb-64 pt-48 flex flex-col gap-20">
 			<div v-for="(title, index) in courses" :key="index">
-				<span
-					class="text-16 text-center w-full block mb-12 mt-20 -tracking-.3"
-					v-text="`${index + 1}. ${courses[index]}`"
-				></span>
-
 				<CourseItem
 					:step="`0${index + 1}`.slice(-2)"
 					:title="title"
