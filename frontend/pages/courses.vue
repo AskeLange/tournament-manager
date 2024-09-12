@@ -7,7 +7,7 @@
 			>
 				<SvgCrown class="w-64 text-#111 mb-12 -rotate-6" />
 
-				<span class="text-20 -tracking-1" v-text="user.name"></span>
+				<span class="text-20" v-text="user.name"></span>
 
 				<span
 					class="opacity-40 text-12 tracking-1 uppercase"
