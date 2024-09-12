@@ -3,6 +3,7 @@
 		<PersonCard
 			v-for="(person, index) in persons"
 			v-bind="{ img: person.image }"
+			class=""
 			:style="`--card-delay:${index}`"
 			@click="set(person)"
 		/>
@@ -26,6 +27,6 @@ async function set(user) {
 </script>
 <style lang="postcss">
 .c-person-selector {
-	@apply grid grid-cols-2 gap-8 overflow-hidden;
+	@apply grid grid-cols-2 gap-8 overflow-hidden pb-48 mx-auto max-w-500px;
 }
 </style>

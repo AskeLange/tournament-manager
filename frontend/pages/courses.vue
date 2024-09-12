@@ -33,24 +33,7 @@
 import SvgCrown from '~/assets/svgs/icon-crown.svg';
 import { useMainStore } from '~/store/main.js';
 
-const courses = [
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-	'Lorem',
-];
+const courses = ['Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem'];
 
 const cookie = useCookie('user_id');
 const store = useMainStore();

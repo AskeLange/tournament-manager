@@ -2,10 +2,7 @@
 	<div id="app">
 		<ThemeConfiguration css-layer="theme-config" />
 
-		<main
-			id="main"
-			class="min-h-screen text-strong mx-auto max-w-500px bg-#f5f5f5"
-		>
+		<main id="main" class="min-h-screen text-strong mx-auto bg-#f5f5f5">
 			<SiteHeader />
 			<NuxtPage />
 		</main>
