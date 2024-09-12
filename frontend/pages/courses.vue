@@ -17,14 +17,19 @@
 		</Transition>
 
 		<div class="py-64 flex flex-col gap-20">
-			<CourseItem
-				v-for="(title, index) in courses"
-				:key="index"
-				:step="`0${index + 1}`.slice(-2)"
-				:title="title"
-				v-model="values[index]"
-				:style="`--card-delay:${index}`"
-			/>
+			<div v-for="(title, index) in courses" :key="index">
+				<span
+					class="text-16 text-center w-full block mb-12 mt-20 -tracking-.3"
+					v-text="`${index + 1}. ${courses[index]}`"
+				></span>
+
+				<CourseItem
+					:step="`0${index + 1}`.slice(-2)"
+					:title="title"
+					v-model="values[index]"
+					:style="`--card-delay:${index}`"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -33,7 +38,15 @@
 import SvgCrown from '~/assets/svgs/icon-crown.svg';
 import { useMainStore } from '~/store/main.js';
 
-const courses = ['Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem'];
+const courses = [
+	'Stairway to Heaven',
+	'Into the Jungle',
+	'Through the Fire and the Flames',
+	'Ring of Fire',
+	'There Had to Be a Cornhole Hole',
+	'Harlem Shuffle (Board)',
+	'Outside the Wall',
+];
 
 const cookie = useCookie('user_id');
 const store = useMainStore();
