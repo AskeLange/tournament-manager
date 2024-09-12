@@ -45,14 +45,14 @@
 				</div>
 			</div>
 
-			<div class="grid gap-40">
+			<div class="grid gap-64">
 				<div
 					v-for="(user, index) in usersComputed.slice(3)"
 					:key="index"
 					class="flex flex-col items-center justify-center gap-12"
 				>
 					<div
-						v-text="`${index + 4}`"
+						v-text="`${index + 4}.`"
 						class="text-16 w-40 h-40 flex justify-center items-center rounded-full bg-[var(--surface)] text-[var(--primary)]"
 					></div>
 
