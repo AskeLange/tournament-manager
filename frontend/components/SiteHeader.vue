@@ -2,6 +2,8 @@
 	<div class="h-64"></div>
 
 	<div :class="['c-site-header', { 'c-site-header--open': isOpen }]">
+		<div class="c-site-header__backdrop" @click="doMenu"></div>
+
 		<div
 			class="flex justify-between items-center border-b border-#e1e1e1 bg-#f5f5f5 z-999 relative h-48"
 		>
@@ -120,7 +122,7 @@ async function logoutUser() {
 .c-site-header {
 	@apply fixed top-0 w-full mb-32 z-10;
 
-	&:before {
+	& .c-site-header__backdrop {
 		@apply fixed top-0 left-0 bottom-0 right-0 z-9;
 		@apply bg-#191919 opacity-0 pointer-events-none;
 		transition: 0.4s cubic-bezier(0.7, 0, 0.3, 1);
@@ -128,8 +130,8 @@ async function logoutUser() {
 	}
 }
 
-.c-site-header--open:before {
-	@apply !opacity-70;
+.c-site-header--open .c-site-header__backdrop {
+	@apply !opacity-70 pointer-events-auto;
 }
 
 .menu-up-enter-active,

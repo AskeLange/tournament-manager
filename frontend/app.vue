@@ -27,6 +27,7 @@ if (cookie.value) {
 <style lang="postcss">
 :where(#app) {
 	@apply text-strong;
-	--easing-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+	/* --easing-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1); */
+	--easing-ease-out-back: cubic-bezier(0.5, 0, 0.15, 1);
 }
 </style>
