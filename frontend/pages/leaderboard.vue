@@ -29,13 +29,14 @@ async function update() {
 const usersComputed = computed(() => {
 	return users.value
 		.map((user) => {
-			let totalPoints = (
-				Array.isArray(user.points) ? user.points : [0]
-			).reduce((acc, points) => acc + (points || 20), 0);
+			let points = 0;
+			for (let n = 0; n < 7; n++) {
+				points += user.points?.[n] || 0;
+			}
 
 			return {
 				...user,
-				totalPoints,
+				points,
 			};
 		})
 		.sort((a, b) => a.totalPoints - b.totalPoints);
