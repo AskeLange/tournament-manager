@@ -3,7 +3,6 @@
 		<PersonCard
 			v-for="(person, index) in persons"
 			v-bind="{ img: person.image }"
-			class=""
 			:style="`--card-delay:${index}`"
 			@click="set(person)"
 		/>
